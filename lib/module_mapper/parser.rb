@@ -23,7 +23,7 @@ module ModuleMapper
     def module_map
       @map ||= file_reader.source_files.map do |source_file|
         ModuleMapper::Map.from(
-          source_file: source_file.filename,
+          filename: source_file.filename,
           content: source_file.contents
         )
       end.flatten

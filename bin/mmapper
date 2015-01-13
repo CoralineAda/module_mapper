@@ -1,0 +1,2 @@
+require 'module_mapper/cli'
+ModuleMapper::CLI.start

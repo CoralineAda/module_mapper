@@ -11,7 +11,7 @@ module ModuleMapper
       containers.map do |container|
         {
           module_name: container.full_name,
-          filename: source_file
+          filename: filename
         }
       end
     end

@@ -23,5 +23,17 @@ module ModuleMapper
       end.flatten
     end
 
+    class SourceFile
+      attr_reader :filename
+
+      def initialize(filename)
+        @filename = filename
+      end
+
+      def contents
+        File.read(filename)
+      end
+    end
+
   end
 end
