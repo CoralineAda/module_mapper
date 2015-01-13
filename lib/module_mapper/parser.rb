@@ -8,13 +8,19 @@ module ModuleMapper
       @paths_to_files = paths_to_files
     end
 
+    def report
+      module_map.each do |mmap|
+        puts "#{mmap[:filename]}\t#{mmap[:module_name]}"
+      end
+    end
+
     private
 
     def file_reader
       @file_reader ||= ModuleMapper::FileReader.new(self.paths_to_files)
     end
 
-    def map!
+    def module_map
       @map ||= file_reader.source_files.map do |source_file|
         ModuleMapper::Map.from(
           source_file: source_file.filename,
