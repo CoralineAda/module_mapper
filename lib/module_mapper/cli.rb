@@ -7,7 +7,7 @@ module ModuleMapper
 
     desc "map PATHS_TO_FILES", "Parse files and return a map of module names and filename"
 
-    def map(path, *more_paths)
+    def mmap(path, *more_paths)
       paths = [path] + more_paths
       ModuleMapper.new(paths).report
     end
